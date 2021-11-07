@@ -276,6 +276,9 @@ def becas_estrato(num_becas,por_apli):
         check = becados_1 + becados_2 +becados_3 + becados_4 + becados_5
     return check
 
+print (check)
+
+
 
 becas_estrato(num_becas,por_apli)
 becas_estrato(40,0.03)
@@ -747,7 +750,7 @@ amazonia_otr=0
             check = becas_andina_femenino + becas_andina_masculino + becas_andina_nobinario+becas_andina_otro+becas_pacifica_femenino+becas_pacifica_masculino+ becas_pacifico_nobinario+becas_pacifica_otro+becas_orinoquia_femenino+becas_orinoquia_masculino+becas_orinoquia_nobinario+becas_orinoquia_otro+becas_caribe_femenino+becas_caribe_masculino+becas_caribe_nobinario+becas_caribe_otro+becas_amazonia_femenino+becas_amazonia_masculino+becas_amazonia_nobinario+becas_amazonia_otro
 
 
-
+print (check)
 ############################################
 
 #Se debe poder elegir el rango de edad de los aspirantes.
@@ -956,7 +959,9 @@ def politica (num_becas,lim_inf_edad,lim_sup_edad,porc_apl,variable_asi):
                         break
             
             check = becados_amazonia + becados_pacifica +becados_orinoquia + becados_caribe + becados_andina  
-    elif variable_asi == "genero":
+    
+    
+    if variable_asi == "genero":
         
     
         
@@ -1046,25 +1051,147 @@ def politica (num_becas,lim_inf_edad,lim_sup_edad,porc_apl,variable_asi):
                         break
                     
             check = becados_femenino + becados_masculino +becados_nobinario + becados_otro
+
+    if variable_asi == "estrato":
+            
+        num_est1 = 0
+        num_est2 = 0
+        num_est3 = 0
+        num_est4 = 0
+        num_est5 = 0
+         
+        for i in filtrado:
+            if i[1][4] == "1":
+                num_est1 +=1
+            elif i[1][4] == "2":
+                num_est2 +=1
+            elif i[1][4] == "3":
+                num_est3 +=1  
+            elif i[1][4] == "4":
+                num_est4 +=1
+            else:
+                num_est5 +=1  
+        
+        becados_1=[]
+        becados_2=[]
+        becados_3=[]
+        becados_4=[]
+        becados_5=[]
+        check=[]
+        beca_estr_1 = 0
+        beca_estr_2 = 0
+        beca_estr_3 = 0
+        beca_estr_4 = 0
+        beca_estr_5 = 0
+        est1 = num_est1
+        est2 = num_est2
+        est3 = num_est3
+        est4 = num_est4
+        est5 = num_est5
+        
+
+        
+        while len(check)<num_becas: # mIENTRAS LA LISTA DE CHEQUEO ES MENOR A NUM DE BECAS ENTRE,  SI NO TERMINE
+    
+            beca_estr_1 = math.floor(est1*porc_apl) + beca_estr_1
+            beca_estr_2 = math.floor(est2*porc_apl) + beca_estr_2
+            beca_estr_3 = math.floor(est3*porc_apl) + beca_estr_3
+            beca_estr_4 = math.floor(est4*porc_apl) + beca_estr_4
+            beca_estr_5 = math.floor(est5*porc_apl) + beca_estr_5
+
+            for i in filtrado:
+                check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
+                if i[1][4]=='1':
+                    if i[0] in check: # No tener en cuenta los asignados de las rondas anteriores. 
+                        continue
+                    if len(becados_1)<beca_estr_1 and len(check) < num_becas:
+                        becados_1.append(i[0])
+                        est1 -=1
+                    else:
+                        break
+    
+            for i in filtrado:
+                check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
+                if i[1][4]=='2':
+                    if i[0] in check: # No tener en cuenta los asignados de las rondas anteriores. 
+                        continue
+                    if len(becados_2)<beca_estr_2 and len(check) < num_becas:
+                        becados_2.append(i[0])
+                        est2 -=1
+                    else:
+                        break    
+                    
+            for i in filtrado:
+                check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
+                if i[1][4]=='3':
+                    if i[0] in check: # No tener en cuenta los asignados de las rondas anteriores. 
+                        continue
+                    if len(becados_3)<beca_estr_3 and len(check) < num_becas:
+                        becados_3.append(i[0])
+                        est3 -=1
+                    else:
+                        break     
+                    
+            for i in filtrado:
+                check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
+                if i[1][4]=='4':
+                    if i[0] in check: # No tener en cuenta los asignados de las rondas anteriores. 
+                        continue
+                    if len(becados_4)<beca_estr_4 and len(check) < num_becas:
+                        becados_4.append(i[0])
+                        est4 -=1
+                    else:
+                        break        
+
+            for i in filtrado:
+                check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
+                if i[1][4]=='5':
+                    if i[0] in check: # No tener en cuenta los asignados de las rondas anteriores. 
+                        continue
+                    if len(becados_5)<beca_estr_5 and len(check) < num_becas:
+                        becados_5.append(i[0])
+                        est5 -=1
+                    else:
+                        break  
+
+                    
+            check = becados_1 + becados_2 +becados_3 + becados_4+becados_5
     return check
 
 print (check)
-  
 
-    else:
-        
-    num_est1 = 0
-    num_est2 = 0
-    num_est3 = 0
-    num_est4 = 0
-    num_est5 = 0
-     
-    for i in filtrado:
-        if i[1][2] == "femenino":
-                num_femenino +=1
-            elif i[1][2] == "masculino":
-                num_masculino +=1
-            elif i[1][2] == "no binario":
-                num_nobinario +=1  
-            else:
-                num_otro +=1  
+
+
+arreglo = np.array([1,2,3,4])
+
+print(arreglo)
+
+arreglo = np.append(arreglo, 5)
+
+print(arreglo)
+
+
+mat_2 = np.array([[1,1], [4,4]])
+mat_2
+
+
+import pandas as pd
+
+serie = pd.Series(['A','B','C','D','E'], index = [10,20,30,40,50], name = "Mi_serie")
+
+serie
+
+
+e1 = [ 28,"Bogotá", 2000]
+e2 = [ 37, "Lima", 3200 ]
+e3 = [ 23,"Bogotá", 1700]
+e4 = [ 25, "Buenos Aires", 1100 ]
+e5 = [ 43,"Buenos Aires", 3300]
+e6 = [ 58, "Lima", 5500 ]
+e7 = [ 32,"Bogotá", 2700]
+e8 = [ 35, "Quito", 2500 ]
+
+empleados = pd.DataFrame([e1,e2, e3, e4, e5, e6, e7, e8], 
+                         index = ["Carlos", "David", "Ana", "Maria", "Felipe", "Luisa", "Juan", "Camila"], 
+                         columns = ["Edad", "Ciudad Residencia", "Salario (en USD)"])
+empleados
