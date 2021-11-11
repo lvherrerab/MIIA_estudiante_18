@@ -102,7 +102,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 69,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -148,7 +148,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 70,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -195,7 +195,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 71,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -217,7 +217,7 @@
        "12100"
       ]
      },
-     "execution_count": 5,
+     "execution_count": 71,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -258,7 +258,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 72,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -305,7 +305,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 73,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -326,7 +326,7 @@
        "1575.0"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 73,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -346,7 +346,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 74,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -434,7 +434,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 75,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -480,7 +480,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 76,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -508,7 +508,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 77,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -609,7 +609,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 78,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -716,7 +716,7 @@
        "Camila    35             Quito              2500"
       ]
      },
-     "execution_count": 19,
+     "execution_count": 78,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -765,7 +765,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 79,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -786,7 +786,7 @@
        "4"
       ]
      },
-     "execution_count": 13,
+     "execution_count": 79,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -802,7 +802,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 80,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -901,7 +901,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 81,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -929,7 +929,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 82,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -1499,7 +1499,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 143,
+   "execution_count": 83,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -1547,7 +1547,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 67,
+   "execution_count": 120,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -1563,26 +1563,17 @@
    },
    "outputs": [],
    "source": [
-    "def inicia_con(alfabeto):\n",
-    "    diccionario= {}\n",
-    "    alfabeto=  paises[\"País en inglés\"]\n",
+    "def inicia_con(df):\n",
+    "    df = df[\"País en inglés\"]\n",
+    "    diccionario = {}\n",
     "    for i in alfabeto:\n",
-    "           diccionario [i] = alfabeto[alfabeto.str.get(0) == i].count()\n",
-    "    return diccionario\n",
-    "\n",
-    "\n",
-    "\n",
-    "#def inicia_con(df):\n",
-    " #   df = df[\"País en inglés\"]\n",
-    "  #  diccionario = {}\n",
-    "   # for letra in alfabeto:\n",
-    "    #    diccionario[letra] = df[df.str.get(0) == letra].count()\n",
-    "    #return diccionario"
+    "        diccionario[i] = df[df.str.get(0) == i].count()\n",
+    "    return diccionario\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 68,
+   "execution_count": 121,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -1600,14 +1591,10 @@
    },
    "outputs": [
     {
-     "ename": "AssertionError",
-     "evalue": "Tu diccionario tiene llaves diferentes al abecedario.",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-68-2a1bfda39f20>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     25\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     26\u001b[0m \u001b[0;31m# Caso 4: Llaves son el abecedario\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 27\u001b[0;31m \u001b[0;32massert\u001b[0m \u001b[0mtuple\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minicia_con\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpaises\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mkeys\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0malfabeto\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"Tu diccionario tiene llaves diferentes al abecedario.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     28\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     29\u001b[0m \u001b[0;31m# Caso 5: Comparamos las que son iguales a cero y otros valores.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mAssertionError\u001b[0m: Tu diccionario tiene llaves diferentes al abecedario."
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
      ]
     }
    ],
@@ -1679,6 +1666,13 @@
     "\n",
     "**Fecha última actualización:** 24/08/2021"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
