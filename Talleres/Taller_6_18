@@ -65,7 +65,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 46,
+   "execution_count": 47,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -136,7 +136,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 48,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -160,7 +160,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 49,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -274,7 +274,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 42,
+   "execution_count": 52,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -293,21 +293,16 @@
     "# YOUR CODE HERE\n",
     "\n",
     "def indice_sencillo_a_multiple():\n",
-    "    df_2= importar_e_indexar()\n",
-    "    return df_2.set_index(keys= \"country_code\", inplace = True,\n",
+    "    dr_eje_1= importar_e_indexar()\n",
+    "    dr_eje_1.set_index(keys= \"country_code\", inplace = True,\n",
     "                            append = True, drop = True)\n",
-    "\n",
-    "\n",
-    "#def indice_sencillo_a_multiple():\n",
-    " #   df = importar_e_indexar()\n",
-    "  #  df.set_index(keys = \"country_code\", inplace = True,\n",
-    "   #                append = True, drop = True)\n",
-    "    #return df"
+    "    return dr_eje_1\n",
+    "\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 43,
+   "execution_count": 53,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -325,14 +320,10 @@
    },
    "outputs": [
     {
-     "ename": "AssertionError",
-     "evalue": "Tu función debe retornar un valor de tipo DataFrame.",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-43-b6353ed752a1>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     21\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     22\u001b[0m \u001b[0;31m# Caso 3: no retorna un DataFrame\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 23\u001b[0;31m \u001b[0;32massert\u001b[0m \u001b[0mtype\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mresultado\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDataFrame\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mf\"Tu función debe retornar un valor de tipo {pd.DataFrame.__name__}.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     24\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     25\u001b[0m \u001b[0;31m# Caso 4: no ejecuta la función importar_e_indexar\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mAssertionError\u001b[0m: Tu función debe retornar un valor de tipo DataFrame."
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
      ]
     }
    ],
@@ -434,7 +425,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 44,
+   "execution_count": 57,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -453,12 +444,13 @@
     "# YOUR CODE HERE\n",
     "def sin_columnas ():\n",
     "    df=importar_e_indexar()\n",
-    "    return  df.drop(['country_name', 'grado', 'coima'], axis = 'columns', inplace=True)\n"
+    "    df.drop(['country_name', 'grado', 'coima'], axis = 'columns', inplace=True)\n",
+    "    return df"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 45,
+   "execution_count": 58,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -476,14 +468,10 @@
    },
    "outputs": [
     {
-     "ename": "AssertionError",
-     "evalue": "Tu función debe retornar un valor de tipo DataFrame.",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-45-7039269acae6>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     21\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     22\u001b[0m \u001b[0;31m# Caso 3: no retorna un DataFrame\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 23\u001b[0;31m \u001b[0;32massert\u001b[0m \u001b[0mtype\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mresultado\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mDataFrame\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34mf\"Tu función debe retornar un valor de tipo {pd.DataFrame.__name__}.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     24\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     25\u001b[0m \u001b[0;31m# Caso 4: no ejecuta la función importar_e_indexar\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mAssertionError\u001b[0m: Tu función debe retornar un valor de tipo DataFrame."
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
      ]
     }
    ],
@@ -583,7 +571,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 78,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -600,13 +588,13 @@
    "outputs": [],
    "source": [
     "def indexar_columnas_numericamente ():\n",
-    "    df_2= df.reset_index()\n",
-    "    return df_2.iloc[:, 80:100]"
+    "    df_2= importar_e_indexar()\n",
+    "    return df_2.drop(df_2.columns[80:101], axis=1, inplace=False)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 79,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -624,19 +612,10 @@
    },
    "outputs": [
     {
-     "ename": "RuntimeError",
-     "evalue": "Tu función produce un error al ejecutarse.",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-28-337198a35f7b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     17\u001b[0m \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 18\u001b[0;31m     \u001b[0mresultado\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mindexar_columnas_numericamente\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     19\u001b[0m \u001b[0;32mexcept\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;32m<ipython-input-27-c802c8426e6f>\u001b[0m in \u001b[0;36mindexar_columnas_numericamente\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0mindexar_columnas_numericamente\u001b[0m \u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0mdf_2\u001b[0m\u001b[0;34m=\u001b[0m \u001b[0mdf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mreset_index\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m     \u001b[0;32mreturn\u001b[0m \u001b[0mdf_2\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0miloc\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m80\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;36m100\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mNameError\u001b[0m: name 'df' is not defined",
-      "\nDuring handling of the above exception, another exception occurred:\n",
-      "\u001b[0;31mRuntimeError\u001b[0m                              Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-28-337198a35f7b>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     18\u001b[0m     \u001b[0mresultado\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mindexar_columnas_numericamente\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     19\u001b[0m \u001b[0;32mexcept\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 20\u001b[0;31m     \u001b[0;32mraise\u001b[0m \u001b[0mRuntimeError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Tu función produce un error al ejecutarse.\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     21\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     22\u001b[0m \u001b[0;31m# Caso 3: no retorna un DataFrame\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mRuntimeError\u001b[0m: Tu función produce un error al ejecutarse."
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
      ]
     }
    ],
@@ -726,7 +705,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 82,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -743,13 +722,14 @@
    "outputs": [],
    "source": [
     "def trabajo_afuera_y_mayores ():\n",
-    "    de_taym=df_1 [(df_1['haymayores'] == \"si\") & (df_1[\"trabajocasa\"] == \"Fuera de su casa\")]\n",
+    "    df= importar_e_indexar()\n",
+    "    de_taym=df [(df['haymayores'] == \"si\") & (df[\"trabajocasa\"] == \"Fuera de su casa\")]\n",
     "    return de_taym\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 83,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -765,7 +745,15 @@
      "task": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
+     ]
+    }
+   ],
    "source": [
     "## AUTO-CALIFICADOR\n",
     "\n",
@@ -854,7 +842,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 84,
    "metadata": {
     "deletable": false,
     "nbgrader": {
@@ -873,16 +861,15 @@
     "# YOUR CODE HERE\n",
     "\n",
     "def hogares_decrecen ():\n",
-    "    \n",
-    "    \n",
-    "nuevo=df_1.loc [:,[\"nrhogar\", \"nrhogar_antes\"]]\n",
-    "    \n",
-    "nuevo[\"hogar_decrecio\"]= np.where(nuevo[\"nrhogar\"] < nuevo[\"nrhogar_antes\"], 1, 0)\n"
+    "    df= importar_e_indexar()\n",
+    "    nuevo=df.loc [:,[\"nrhogar\", \"nrhogar_antes\"]]\n",
+    "    nuevo[\"hogar_decrecio\"]= np.where(nuevo[\"nrhogar\"] < nuevo[\"nrhogar_antes\"], 1, 0)\n",
+    "    return nuevo\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 85,
    "metadata": {
     "deletable": false,
     "editable": false,
@@ -898,7 +885,15 @@
      "task": false
     }
    },
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Felicidades, realizaste este ejercicio correctamente.\n"
+     ]
+    }
+   ],
    "source": [
     "## AUTO-CALIFICADOR\n",
     "\n",
